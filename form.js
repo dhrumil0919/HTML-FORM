@@ -134,28 +134,58 @@ document.getElementById('suggestions').onchange = () => {
 }
 
 function ddvalidate() {
-    var e = document.getElementById("ddView");
+    debugger
+    var e = document.getElementById("ddview");
     var optionSelIndex = e.options[e.selectedIndex].value;
-    var optionSelectedText = e.options[e.selectedIndex].value;
-    if (optionSelIndex == 0) {
+    var optionSelectedText = e.options[e.selectedIndex].text;
+    if (optionSelIndex == 0) 
+    {
         alert("Please select a field");
     }
-    else {
-        alert("Success !! You have selected Course : " + optionSelectedText); ;
+    if (!document.getElementById("Yes").checked == true)
+     {
+         alert("please check the field");
+     }
+    if(!document.getElementById("Maybe").checked == true)
+    {
+        alert("please check the field");
+    }
+    if(!document.getElementById("No").checked == true)
+    {
+        alert("please check the field");
     }
 }
-function validateForm()
-{debugger;
-if (!document.getElementById("Yes").checked == true)
-     {
-         alert("please select the field");
-     }
-if(!document.getElementById("Maybe").checked == true)
-    {
-        alert("please select the field");
-    }
-if(!document.getElementById("No").checked == true)
-    {
-        alert("please select the field");
-    }
+
+document.getElementById("submit").onclick=function()
+{
+    document.getElementById("table").style.display="block";
+    
+    var table = document.getElementById("table");
+    var row = table.insertRow(-1);
+    var first = row.insertCell(0);
+    var last = row.insertCell(1);
+    var address = row.insertCell(2);
+    var address_2 = row.insertCell(3);
+    var city = row.insertCell(4);
+    var state= row.insertCell(5);
+    var postal = row.insertCell(6);
+    var phone = row.insertCell(7);
+    var email = row.insertCell(8);
+    var suggestions = row.insertCell(9);
+    var feedback = row.insertCell(10);
+    var dropdown = row.insertCell(11) 
+    first.innerHTML = document.getElementById("fname").value;
+    last.innerHTML = document.getElementById("lname").value;
+    address.innerHTML = document.getElementById("add_1").value;
+    address_2.innerHTML = document.getElementById("add_2").value;
+    city.innerHTML = document.getElementById("city").value;
+    state.innerHTML = document.getElementById("city_1").value;
+    postal.innerHTML = document.getElementById("postal").value;
+    phone.innerHTML = document.getElementById("phone").value;
+    email.innerHTML = document.getElementById("email_area").value;
+    suggestions.innerHTML = document.getElementById("suggestions").value;
+    feedback.innerHTML = document.getElementById("feedback").value;
+    feedback.innerHTML = document.getElementById("").value;
+    
+    return false;
 }
